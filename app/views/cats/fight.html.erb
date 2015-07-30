@@ -1,3 +1,13 @@
 FIGHT!
 <br/>
-<%= @cat_1 %> VS <%= @cat_2 %>
+
+
+<%= @cat_1.thumb_image_of_the_cat %> <%= button_to [:vote, @cat_1] do %>
+	Vote on me! <%= @cat_1.cuteness_score %>
+<% end %>VS <%= button_to [:vote, @cat_2] do %>
+	Vote on me! <%= @cat_2.cuteness_score %>
+<% end %><%= @cat_2.thumb_image_of_the_cat %>
+
+
+
+
