@@ -2,11 +2,11 @@ FIGHT!
 <br/>
 
 
-<%= @cat_1.thumb_image_of_the_cat %> <%= button_to [:vote, @cat_1] do %>
+<%= image_tag @cat_1.thumb_image_of_the_cat, size: "200x200"%> <%= button_to [:vote, @cat_1] do %>
 	Vote on me! <%= @cat_1.cuteness_score %>
 <% end %>VS <%= button_to [:vote, @cat_2] do %>
 	Vote on me! <%= @cat_2.cuteness_score %>
-<% end %><%= @cat_2.thumb_image_of_the_cat %>
+<% end %><%= image_tag @cat_2.thumb_image_of_the_cat, size: "200x200"%>
 
 
 
