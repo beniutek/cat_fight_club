@@ -1,5 +1,6 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /cats
   # GET /cats.json
@@ -11,7 +12,11 @@ class CatsController < ApplicationController
   # GET /cats/1.json
   def show
   end
-
+  def fight
+    size = Cat.count
+    @cat_1 = Cat.where(id: rand(size))
+    @cat_2 = Cat.where(id: rand(size))
+  end
   # GET /cats/new
   def new
     @cat = Cat.new
