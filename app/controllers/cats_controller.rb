@@ -14,8 +14,8 @@ class CatsController < ApplicationController
   end
   def fight
     size = Cat.count
-    @cat_1 = Cat.where(id: rand(size))
-    @cat_2 = Cat.where(id: rand(size))
+    @cat_1 = Cat.find(rand(size)+1)
+    @cat_2 = Cat.find(rand(size)+1)
   end
   # GET /cats/new
   def new
@@ -47,13 +47,21 @@ class CatsController < ApplicationController
   def update
     respond_to do |format|
       if @cat.update(cat_params)
-        format.html { redirect_to @cat, notice: 'Cat was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cat }
+        format.json { render :show, status: :ok}
+        format.html { redirect_to fight_path, notice: 'Cat was successfully updated.' }
       else
-        format.html { render :edit }
         format.json { render json: @cat.errors, status: :unprocessable_entity }
+        format.html { render :edit }
+        
       end
     end
+  end
+
+  def vote
+    #byebug
+    @cat = Cat.find(params[:id])
+    @cat.increment!(:cuteness_score)
+    redirect_to action: :fight
   end
 
   # DELETE /cats/1
