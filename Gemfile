@@ -26,6 +26,7 @@ gem 'devise'
 gem 'flickraw'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'rufus-scheduler'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
