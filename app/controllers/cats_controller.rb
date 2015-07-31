@@ -1,10 +1,19 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :auth_visitor!
+
+  def auth_visitor!
+    if admin_signed_in?
+      authenticate_admin!
+    else
+      authenticate_user!
+    end
+  end
 
   # GET /cats
   # GET /cats.json
   def index
+    redirect_to action: :fight if !admin_signed_in? 
     @cats = Cat.all
   end
 
