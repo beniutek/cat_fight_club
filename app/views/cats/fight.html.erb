@@ -1,6 +1,9 @@
 FIGHT!
 <br/>
-
+<%= link_to "Top cats of the day", top_cats_path(uploaded_at: Date.today)  %>
+<%= link_to "Top cats of the week", top_cats_path(uploaded_at: Date.today-7)  %>
+<%= link_to "Top cats of the month", top_cats_path(uploaded_at: Date.today-30)  %>
+<%= link_to "Top cats of all time", top_cats_path  %>
 
 <%= image_tag @cat_1.thumb_image_of_the_cat, class: "cat-image" %> <%= button_to [:vote, @cat_1] do %>
 	Vote on me! <%= @cat_1.cuteness_score %>

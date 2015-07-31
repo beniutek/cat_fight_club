@@ -25,6 +25,16 @@ class CatsController < ApplicationController
   # GET /cats/1.json
   def show
   end
+
+  def top
+    
+    if params[:uploaded_at].nil?
+      @cats = Cat.top_cats_all_time
+    else
+      @cats = Cat.top_cats(10,params[:uploaded_at])
+    end
+    
+  end
   def fight
     size = Cat.count
     @cat_1 = Cat.find(rand(size)+1)
