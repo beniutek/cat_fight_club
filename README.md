@@ -1,15 +1,16 @@
 # cat_fight_club
 
 1st RULE: You do not talk about CAT FIGHT CLUB.
+
 2nd RULE: You DO NOT talk about CAT FIGHT CLUB.
 
-3rd RULE: If someone says "stop" or goes limp, taps out the fight is over.
+3rd RULE: If someone says "meow" or goes "purrr", taps out the fight is over.
 
-4th RULE: Only two guys to a fight.
+4th RULE: Only two cats to a fight.
 
 5th RULE: One fight at a time.
 
-6th RULE: No shirts, no shoes.
+6th RULE: No catnip, no dogs.
 
 7th RULE: Fights will go on as long as they have to.
 
