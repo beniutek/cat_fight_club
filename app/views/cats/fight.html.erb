@@ -4,13 +4,68 @@ FIGHT!
 <%= link_to "Top cats of the week", top_cats_path(uploaded_at: Date.today-7)  %>
 <%= link_to "Top cats of the month", top_cats_path(uploaded_at: Date.today-30)  %>
 <%= link_to "Top cats of all time", top_cats_path  %>
+</br>
 
-<%= image_tag @cat_1.thumb_image_of_the_cat, class: "cat-image" %> <%= button_to [:vote, @cat_1] do %>
-	Vote on me! <%= @cat_1.cuteness_score %>
-<% end %>VS <%= button_to [:vote, @cat_2] do %>
-	Vote on me! <%= @cat_2.cuteness_score %>
-<% end %><%= image_tag @cat_2.thumb_image_of_the_cat, class: "cat-image"%>
+<!-- <div class="row">
+	<div class="col-md-5">
+		
+			<%= image_tag @cat_1.thumb_image_of_the_cat, class: "cat-image" %> 
+		
+		
+			<%= button_to [:vote, @cat_1] do %>
+				Vote on me! <%= @cat_1.cuteness_score %>
+			<% end %>
+		
+	</div>
+	<div class="col-md-2">
+		VS 
+	</div>
+	<div class-"col-md-5">
+		
+			<%= button_to [:vote, @cat_2] do %>
+				Vote on me! <%= @cat_2.cuteness_score %>
+			<% end %>
+		
+			<%= image_tag @cat_2.thumb_image_of_the_cat, class: "cat-image"%>
+		
+	</div>
 
+</div>
+ -->
+
+ <div class="row">
+	<div class="col-md-5">
+		
+			<%= image_tag @cat_1.thumb_image_of_the_cat, class: "cat-image" %> 
+		
+		
+			
+		
+	</div>
+
+	<div class="col-md-2">
+		VS 
+	</div>
+	<div class-"col-md-5">
+		
+			
+		
+			<%= image_tag @cat_2.thumb_image_of_the_cat, class: "cat-image"%>
+		
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<%= button_to [:vote, @cat_1] do %>
+				Vote on me! <%= @cat_1.cuteness_score %>
+			<% end %>
+		</div>
+	<div class="col-md-6">
+		<%= button_to [:vote, @cat_2] do %>
+				Vote on me! <%= @cat_2.cuteness_score %>
+			<% end %>
+	</div>
 
 
 
