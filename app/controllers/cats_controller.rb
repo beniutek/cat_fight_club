@@ -13,12 +13,16 @@ class CatsController < ApplicationController
   # GET /cats
   # GET /cats.json
   def index
-    redirect_to action: :fight if !admin_signed_in? 
-    @cats = Cat.paginate(page: params[:page], per_page: 20).order(cuteness_score: :desc)
-    respond_to do |format|
-      format.html
-      format.js
+    if admin_signed_in?
+      @cats = Cat.paginate(page: params[:page], per_page: 20).order(cuteness_score: :desc)
+    else
+      redirect_to action: :fight and return
     end
+    
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
   end
 
   # GET /cats/1
