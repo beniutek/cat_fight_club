@@ -50,6 +50,7 @@ RSpec.describe CatsController, type: :controller do
       expect( response ).to redirect_to( fight_cats_path )
     end
   end
+  
   describe "signed in as admin" do
     it "should allow admins to see index" do
       login_with create( :admin )
