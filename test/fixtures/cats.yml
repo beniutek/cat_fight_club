@@ -4,8 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+#one: {}
 # column: value
 #
-two: {}
+#two: {}
 #  column: value
+# <% Cat.search_for_cats.each_with_index do |tomcat,i| %>
+#   cat_<%= i %>:
+#     cuteness_score: <%= rand(100) %>
+#     thumb_image_of_the_cat: <%= Flick
+one: 
+  cuteness_score: 5
+  thumb_image_of_the_cat: "https://farm1.staticflickr.com/513/20267621151_264586ebec_b.jpg"
+two:
+  cuteness_score: 10
+  thumb_image_of_the_cat: "https://farm1.staticflickr.com/517/20261839635_e0c6d56f94_b.jpg"

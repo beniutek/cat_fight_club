@@ -1,3 +1,9 @@
-<div>
-  <%= image_tag cat.thumb_image_of_the_cat, class: "cat-image" %>
+<div class="row">
+  <div class="col-md-5">
+    <%= image_tag cat.thumb_image_of_the_cat, class: "cat-image" %>
+  </div>
+  <div class="col-md-5">
+    Score: <%= cat.cuteness_score %><br\>
+    ID: <%= cat.id %><br\>
+  </div>
 </div>

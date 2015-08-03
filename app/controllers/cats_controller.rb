@@ -1,28 +1,17 @@
 class CatsController < ApplicationController
   before_action :set_cat, only: [:show, :edit, :update, :destroy]
-  before_action :auth_visitor!
+  before_action :authenticate_user!
 
-  def auth_visitor!
-    if admin_signed_in?
-      authenticate_admin!
-    else
-      authenticate_user!
-    end
-  end
+  
 
   # GET /cats
   # GET /cats.json
   def index
-    if admin_signed_in?
+    if current_user.admin?
       @cats = Cat.paginate(page: params[:page], per_page: 20).order(cuteness_score: :desc)
     else
       redirect_to action: :fight and return
     end
-    
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
   end
 
   # GET /cats/1
@@ -30,19 +19,14 @@ class CatsController < ApplicationController
   def show
   end
 
-  def top
-    
-    if params[:uploaded_at].nil?
-      @cats = Cat.top_cats_all_time
-    else
-      @cats = Cat.top_cats(10,params[:uploaded_at])
-    end
-    
+  def top    
+      @cats = Cat.top_cats(10,params[:custom_date])      
   end
+
   def fight
-    size = Cat.count
-    @cat_1 = Cat.find(rand(size)+1)
-    @cat_2 = Cat.find(rand(size)+1)
+    tmp = Cat.get_random_cats(2)
+    @cat_1 = tmp[0]
+    @cat_2 = tmp[1]
   end
   # GET /cats/new
   def new
@@ -87,7 +71,8 @@ class CatsController < ApplicationController
   def vote
     #byebug
     @cat = Cat.find(params[:id])
-    @cat.increment!(:cuteness_score)
+    @cat.votes << Vote.create
+    #@cat.increment!(:cuteness_score)
     redirect_to action: :fight
   end
 
