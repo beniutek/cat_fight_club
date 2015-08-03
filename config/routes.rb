@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :cats, :except =>[:new,:edit,:delete] do
+  resources :cats, :except =>[:new,:edit,:destroy] do
 
     member do
       post :vote
     end
     collection do
       get :top
+      get :fight
     end
   end
 

@@ -23,12 +23,12 @@ FIGHT!
 
 <div class="row">
 	<div class="col-md-6">
-		<%= button_to [:vote, @cat_1] do %>
+		<%= button_to [:vote, @cat_1], id: "cat_1" do %>
 				Vote on me! <%= @cat_1.cuteness_score %>
 			<% end %>
 		</div>
 	<div class="col-md-6">
-		<%= button_to [:vote, @cat_2] do %>
+		<%= button_to [:vote, @cat_2], id: "cat_2" do %>
 				Vote on me! <%= @cat_2.cuteness_score %>
 			<% end %>
 	</div>
