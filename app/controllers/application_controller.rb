@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::RoutingError, :with => :rescue404
 
   def rescue_404
-  	render plain: "page does not exist"
+  	render plain: "this cat does not exist"
   end
 end

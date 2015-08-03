@@ -38,8 +38,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: cats_db_development
+  database: cats_db_test
 
 production:
   <<: *default
-  database: cats_db_development
+  database: cats_db_production
