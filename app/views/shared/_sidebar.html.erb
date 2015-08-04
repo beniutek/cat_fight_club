@@ -1,0 +1,27 @@
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "Cats", fight_cats_path, class: "navbar-brand" %>
+  </div>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <% if   user_signed_in? %>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Top cats of the day"  , top_cats_path(custom_date: Date.today)    %></li>
+      <li><%= link_to "Top cats of the week" , top_cats_path(custom_date: Date.today-7)  %></li>
+      <li><%= link_to "Top cats of the month", top_cats_path(custom_date: Date.today-30) %></li>
+      <li><%= link_to "Top cats of all time" , top_cats_path                %></li>
+      <% if current_user.admin? %>
+
+      <li><%= link_to "only for admins", cats_path %></li>
+      <% end %>
+      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    </ul>
+    <% end %>
+  </div>
+</nav>

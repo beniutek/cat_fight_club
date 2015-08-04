@@ -1,0 +1,83 @@
+// Place all the styles related to the Cats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@media (min-width: 768px) {
+  .navbar-collapse {
+    height: auto;
+    border-top: 0;
+    box-shadow: none;
+    max-height: none;
+    padding-left:0;
+    padding-right:0;
+}
+.navbar-collapse.collapse {
+    display: block !important;
+    width: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+}
+.navbar-collapse.in {
+    overflow-x: visible;
+}
+
+.navbar
+{
+    max-width:300px;
+    margin-right: 0;
+    margin-left: 0;
+}   
+
+.navbar-nav,
+.navbar-nav > li,
+.navbar-left,
+.navbar-right,
+.navbar-header
+{float:none !important;}
+
+.navbar-right .dropdown-menu {
+  left:0;
+  right:auto;
+}
+
+.navbar-collapse .navbar-nav.navbar-right:last-child {
+    margin-right: 0;
+
+}
+.row {
+  position: relative;
+}
+.bottom-align {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+}
+.navbar-toggle:active, .open .navbar-toggle {background:#FFF !important; color:#000 !important;}
+}
+
+#images-of-cat .row{
+  margin:50px /* margin around the "whole row" not inbetween "stacked rows" */
+  
+}
+
+.panel{
+    border-style:solid;
+    border-width: 1px;
+    border-color: grey;
+}
+.panel-body{
+    min-height:100%;
+}
+.img-thumbnail{
+  max-width: 300px;
+  max-heigth: 300px;
+  border:150px;
+  border-radius:4px; /* slight round in images in gallery */
+  margin:0px;
+  padding:0px;
+  
+}
+
+
+

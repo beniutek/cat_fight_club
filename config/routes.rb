@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  
   devise_for :users
-  resources :cats, :except =>[:new,:edit,:destroy] do
 
+  resources :cats, :except =>[:new,:edit,:destroy] do
     member do
       post :vote
     end
@@ -65,5 +66,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  match "*path", :to => "application#rescue_404", :via => :all
+  #match "*path", :to => "application#rescue_404", :via => :all
 end
