@@ -1,7 +1,7 @@
 $('#kitties').append('<%= j render @cats %>');
 <% if @cats.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate @cats %>');
+$('.pagination').replaceWith('<%= j will_paginate @cats %>');
 <% else %>
-  $(window).off('scroll');
-  $('.pagination').remove();
+$(window).off('scroll');
+$('.pagination').remove();
 <% end %>

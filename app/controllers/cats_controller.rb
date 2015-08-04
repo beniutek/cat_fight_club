@@ -20,7 +20,7 @@ class CatsController < ApplicationController
   end
 
   def top    
-      @cats = Cat.top_cats(10,params[:custom_date])      
+    @cats = Cat.top_cats(10,params[:custom_date])      
   end
 
   def fight
@@ -96,4 +96,4 @@ class CatsController < ApplicationController
     def cat_params
       params[:cat]
     end
-end
+  end
